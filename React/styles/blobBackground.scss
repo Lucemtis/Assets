@@ -1,0 +1,384 @@
+@import 'colors';
+
+$timeAnimation : 15s;
+
+.blobBackground{
+    display: none;
+}
+
+@media screen and (min-width: 769px) {
+
+    .blobBackground {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: -999;
+        box-sizing: border-box;
+    }
+    
+    .blobCont {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        filter: blur(50px);
+        transform-origin: center center;
+        transform: scale(1.5);
+    
+    }
+    
+    .blobImg{
+        min-width: 100vw;
+        width: 100%;
+        filter: brightness(70%) sepia(27%) hue-rotate(-5deg);
+    }
+      
+      .blob {
+        animation: circle0 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle0 {
+        from {
+          transform: rotate(90deg) translate(200px, 0.1px) rotate(-90deg);
+          r: 90;
+        }
+        to {
+          transform: rotate(450deg) translate(200px, 0.1px) rotate(-450deg);
+          r: 90;
+        }
+    
+        50%{
+            r: 0;
+        }
+    }
+      .blob:nth-child(1) {
+        animation: circle1 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle1 {
+        from {
+          transform: rotate(90deg) translate(200px, 0.1px) rotate(-90deg);
+          r: 90;
+        }
+        to {
+          transform: rotate(450deg) translate(200px, 0.1px) rotate(-450deg);
+          r: 90;
+        }
+    
+        10%{
+            r: 150;
+        }
+    
+      }
+      .blob:nth-child(2) {
+        animation: circle2 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle2 {
+        from {
+          transform: rotate(180deg) translate(200px, 0.1px) rotate(-180deg);
+          r: 0;
+        }
+        to {
+          transform: rotate(540deg) translate(200px, 0.1px) rotate(-540deg);
+          r: 0;
+        }
+    
+        20%{
+            r: 200;
+        }
+      }
+      .blob:nth-child(3) {
+        animation: circle3 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle3 {
+        from {
+          transform: rotate(270deg) translate(200px, 0.1px) rotate(-270deg);
+          r: 0;
+        }
+        to {
+          transform: rotate(630deg) translate(200px, 0.1px) rotate(-630deg);
+          r: 0;
+        }
+    
+        
+        10%{
+            r: 200;
+        }
+      }
+      .blob:nth-child(4) {
+        animation: circle4 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle4 {
+        from {
+          transform: rotate(360deg) translate(200px, 0.1px) rotate(-360deg);
+          r: 0;
+        }
+        to {
+          transform: rotate(720deg) translate(200px, 0.1px) rotate(-720deg);
+          r: 0;
+        }
+    
+        25%{
+            r: 150;
+        }
+      }
+      .blob:nth-child(5) {
+        animation: circle5 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle5 {
+        from {
+          transform: rotate(450deg) translate(200px, 0.1px) rotate(-450deg);
+          r: 40;
+        }
+        to {
+          transform: rotate(810deg) translate(200px, 0.1px) rotate(-810deg);
+          r: 40;
+        }
+    
+        20%{
+            r: 180;
+        }
+      }
+      .blob:nth-child(6) {
+        animation: circle6 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle6 {
+        from {
+          transform: rotate(540deg) translate(200px, 0.1px) rotate(-540deg);
+          r: 180;
+        }
+        to {
+          transform: rotate(900deg) translate(200px, 0.1px) rotate(-900deg);
+          r: 180;
+        }
+        10%{
+            r: 90;
+        }
+      }
+      .blob:nth-child(7) {
+        animation: circle7 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle7 {
+        from {
+          transform: rotate(630deg) translate(200px, 0.1px) rotate(-630deg);
+          r: 150;
+        }
+        to {
+          transform: rotate(990deg) translate(200px, 0.1px) rotate(-990deg);
+          r: 150;
+        }
+    
+        50%{
+            r: 0;
+        }
+      }
+      .blob:nth-child(8) {
+        animation: circle8 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle8 {
+        from {
+          transform: rotate(720deg) translate(200px, 0.1px) rotate(-720deg);
+          r: 110;
+        }
+        to {
+          transform: rotate(1080deg) translate(200px, 0.1px) rotate(-1080deg);
+          r: 110;
+        }
+    
+        40%{
+            r: 0;
+        }
+      }
+      .blob:nth-child(9) {
+        animation: circle9 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle9 {
+        from {
+          transform: rotate(810deg) translate(200px, 0.1px) rotate(-810deg);
+          r: 110;
+        }
+        to {
+          transform: rotate(1170deg) translate(200px, 0.1px) rotate(-1170deg);
+          r: 110;
+        }
+    
+        10%{
+            r: 0;
+        }
+      }
+      .blob:nth-child(10) {
+        animation: circle10 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle10 {
+        from {
+          transform: rotate(900deg) translate(200px, 0.1px) rotate(-900deg);
+          r: 140;
+        }
+        to {
+          transform: rotate(1260deg) translate(200px, 0.1px) rotate(-1260deg);
+          r: 140;
+        }
+    
+        20%{
+            r: 80;
+        }
+      }
+      .blob:nth-child(11) {
+        animation: circle11 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle11 {
+        from {
+          transform: rotate(990deg) translate(200px, 0.1px) rotate(-990deg);
+          r: 80;
+        }
+        to {
+          transform: rotate(1350deg) translate(200px, 0.1px) rotate(-1350deg);
+          r: 80;
+        }
+        10%{
+            r: 0;
+        }
+      }
+      .blob:nth-child(12) {
+        animation: circle12 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle12 {
+        from {
+          transform: rotate(1080deg) translate(200px, 0.1px) rotate(-1080deg);
+          r: 100;
+        }
+        to {
+          transform: rotate(1440deg) translate(200px, 0.1px) rotate(-1440deg);
+          r: 100;
+        }
+        15%{
+            r: 0;
+        }
+      }
+      .blob:nth-child(13) {
+        animation: circle13 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle13 {
+        from {
+          transform: rotate(1170deg) translate(200px, 0.1px) rotate(-1170deg);
+          r: 0;
+        }
+        to {
+          transform: rotate(1530deg) translate(200px, 0.1px) rotate(-1530deg);
+          r: 0;
+        }
+    
+        10%{
+            r: 80;
+        }
+      }
+      .blob:nth-child(14) {
+        animation: circle14 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle14 {
+        from {
+          transform: rotate(1260deg) translate(200px, 0.1px) rotate(-1260deg);
+          r: 0;
+        }
+        to {
+          transform: rotate(1620deg) translate(200px, 0.1px) rotate(-1620deg);
+          r: 0;
+        }
+    
+        50%{
+            r: 80;
+        }
+    
+      }
+      .blob:nth-child(15) {
+        animation: circle15 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle15 {
+        from {
+          transform: rotate(1350deg) translate(200px, 0.1px) rotate(-1350deg);
+          r:0;
+        }
+        to {
+          transform: rotate(1710deg) translate(200px, 0.1px) rotate(-1710deg);
+          r:0;
+        }
+    
+        15%{
+            r: 140;
+        }
+    
+      }
+      .blob:nth-child(16) {
+        animation: circle16 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle16 {
+        from {
+          transform: rotate(1440deg) translate(200px, 0.1px) rotate(-1440deg);
+          r:140;
+        }
+        to {
+          transform: rotate(1800deg) translate(200px, 0.1px) rotate(-1800deg);
+          r: 140;
+        }
+    
+        50%{
+            r: 0;
+        }
+      }
+      .blob:nth-child(17) {
+        animation: circle17 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle17 {
+        from {
+          transform: rotate(1530deg) translate(200px, 0.1px) rotate(-1530deg);
+          r: 0;
+        }
+        to {
+          transform: rotate(1890deg) translate(200px, 0.1px) rotate(-1890deg);
+          r: 0;
+        }
+    
+        20%{
+            r: 80;
+        }
+    
+      }
+      .blob:nth-child(18) {
+        animation: circle18 $timeAnimation infinite linear;
+      }
+      
+      @keyframes circle18 {
+        from {
+          transform: rotate(1620deg) translate(200px, 0.1px) rotate(-1620deg);
+          r: 0;
+        }
+        to {
+          transform: rotate(1980deg) translate(200px, 0.1px) rotate(-1980deg);
+          r: 0;
+        }
+    
+        50%{
+            r: 80;
+        }
+      }  
+    
+}
+

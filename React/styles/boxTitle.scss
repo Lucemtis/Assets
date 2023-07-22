@@ -1,0 +1,74 @@
+@import "colors";
+
+.boxTitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+    width: 100%;
+    max-width: 600px;
+    text-transform: uppercase;
+    font-family: "El Messiri", sans-serif;
+    font-weight: 700;
+    font-size: 3em;
+    line-height: 1;
+    margin: 25px 0;
+    text-align: left;
+    position: relative;
+    border: 1px solid $white-color;
+    padding: 25px;
+    box-sizing: border-box;
+    
+    box-shadow: inset 0 0 25px rgba($secondary-color, 0.1);
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+.boxTitle::before{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(2px);
+    z-index: -1;
+}
+
+.boxTitle span{
+    font-weight: 900;
+    width: 100%;
+    font-size: 1.5em;
+    color: $primary-color;
+    text-shadow: 0 0 10px rgba($secondary-color, 0.6);
+}
+
+.boxTitle p{
+    font-size: 0.6em;
+    
+    font-family: "Montserrat", sans-serif;
+}
+
+@media screen and (min-width: 426px) {
+
+    .boxTitle span{
+        font-size: 2em;
+    }
+
+    .boxTitle p{
+        font-size: 1em;
+    }
+
+}
+
+@media screen and (min-width: 769px) {
+
+    .boxTitle span{
+        font-size: 2.5em;
+    }
+
+    .boxTitle p{
+        font-size: 1.2em;
+    }
+
+}

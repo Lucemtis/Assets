@@ -1,0 +1,128 @@
+@import "colors";
+
+@font-face {
+  font-family: 'Headlinetext';
+  src: url('../medias/fonts/Headlinetext.ttf') format('truetype');
+  /* Ajoutez d'autres formats de police si nécessaire */
+
+  font-family: 'Fender';
+  src: url('../medias/fonts/fender.otf') format('truetype');
+}
+
+
+.titleContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $primary-color;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.titleContent::before {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: $primary-color;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  right: 0;
+}
+
+.titleContent::after {
+  content: "";
+  width: 100%;
+  height: 1px;
+  background-color: $primary-color;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+}
+  
+.titleBanner{
+  font-family: 'Fender';
+  font-weight: normal;
+  text-transform: uppercase;
+  color: $dark-color;
+  font-size: 30.7vw;
+  line-height: 1;
+  bottom: -1vh;
+  width: 100%;
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.5s ease-in-out, padding 0.5s ease-in-out;
+  position: relative;
+}
+
+.titleBanner::before{
+  content: '';
+  position: absolute;
+  top: -1vh;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../medias/MasksAndSVG/noise.svg'), linear-gradient( $dark-color , transparent 20% );
+  background-repeat: repeat;
+  background-size: 2% 5%;
+  background-clip: content-box;
+  mix-blend-mode: color-burn;
+  opacity: 0.5;
+
+  animation: screenRad 60s linear infinite;
+
+  @keyframes screenRad {
+    
+    from{
+      background-position: 0 0;
+    }
+    to{
+      background-position: 0 100%;
+    }
+  }
+}
+
+.titleBanner::selection {
+  background-color: $dark-color;
+  color: $primary-color;
+}
+
+@media screen and (min-width: 769px) {
+
+  .titleContent{
+    background-color: transparent;
+    text-shadow: 0 0 5vh $secondary-color;
+    
+  }
+
+  .titleBanner{
+    color: $primary-color;
+  }
+  
+  .titleBanner::selection {
+    background-color: $primary-color;
+    color: $dark-color;
+  }
+
+
+  .titleContent::before {
+    top: 0px;
+    bottom: auto;
+    left: auto;
+    right: 15%;
+    width: 25%;
+  }
+  
+  .titleContent::after {
+    top: 7px;
+    bottom: auto;
+    left: auto;
+    right: 20%;
+    width: 15%;
+  }
+
+
+}

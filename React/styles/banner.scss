@@ -1,0 +1,117 @@
+@import 'colors';
+
+@mixin responsive-font-size($font-size, $max-font-size) {
+  font-size: $font-size;
+  font-size: min($font-size, $max-font-size); // Limiter la taille de police à la valeur maximale
+}
+
+.banner{
+    font-family: "Montserrat", sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 $PaddingPhone;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+.bannerSecondColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 50px;
+    align-items: center;
+    
+    text-align: end;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.banner h2{
+    font-weight: 900;
+    font-size: 20px;
+    height: 30px;
+    letter-spacing: 1vw;
+    &:last-letter{
+        letter-spacing: 15px; // Remplacez la valeur par celle qui correspond à votre cas
+    }
+}
+
+.banner .letterSpacingOff{
+    letter-spacing: 0px;
+}
+
+.banner h3{
+    width: 100%;
+    height: 20px;
+    font-size: 10px;
+    opacity: 0.6;
+    line-height: 1;
+    font-weight: 500;
+}
+
+@media screen and (min-width: 769px) {
+
+    .bannerSecondColumn{
+        height: auto;
+    }
+
+    .banner{
+        padding: 0 $PaddingPc;
+    }
+
+    .banner h2, .banner .letterSpacingOff{
+        font-size: 3.88vw;
+        height: auto;
+        line-height: 1;
+    }
+
+    .banner h2{
+        
+        padding-left: 1vw;
+        position: relative;
+    }
+
+    .banner h2::before{
+        content: '';
+        background-color: $primary-color;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(48deg, $primary-color, transparent 80%);
+        filter: contrast(520%) brightness(1000%) ;
+        mix-blend-mode: saturation;
+    }
+
+    .banner h2::after{
+        content: '';
+        background-color: $primary-color;
+        position: absolute;
+        width: 3px;
+        height: 100%;
+        top: 0;
+        left: -20px;
+    }
+
+    .banner h3{
+        height: auto;
+        font-size: 1.12vw;
+        line-height: 2;
+        position: relative;
+    }
+
+    .banner h3::after{
+        content: '';
+        background-color: $primary-color;
+        position: absolute;
+        width: 7%;
+        height: 1px;
+        top: 50%;
+        left: 60%;
+    }
+
+
+}

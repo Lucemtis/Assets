@@ -1,0 +1,73 @@
+@import 'colors';
+
+.boxContent {
+    min-height: 100svh;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+.horizontalScroll {
+    display: flex; /* Utilisez flex au lieu de grid */
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden; /* Utilisez overflow-x au lieu de overflow-y */
+    box-sizing: border-box;
+    gap: 25px; /* Utilisez gap au lieu de grid-gap */
+    padding: 50px 0; /* Ajoutez une marge intérieure pour éviter que le contenu ne soit trop proche des bords */
+}
+
+.horizontalScroll > * {
+    flex-shrink: 0; /* Empêche les éléments de se rétrécir lorsque l'espace est limité */
+}
+
+.horizontalScroll::-webkit-scrollbar-thumb{
+    display: none;
+}
+
+@media screen and (min-width: 1025px) {
+
+    .boxContent{
+        min-height: calc(4550px + 100svh) ;
+        align-items: flex-start;
+        position: relative;
+        overflow: visible;
+    }
+
+    .boxContent.fixed .horizontalScroll{
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .boxContent.fixed.endFixed{
+        align-items: flex-end;
+    }
+    .boxContent.fixed.endFixed .horizontalScroll{
+        position: relative;
+    }
+
+    .boxContent.fixed .horizontalScroll > *{
+        transform: translateX(var(--scrollFill));
+    }
+
+    .horizontalScroll {
+        position: relative;
+        min-width: 100vw;
+        height: 100svh;
+        gap: 200px; /* Utilisez gap au lieu de grid-gap */
+        padding: 0;
+        flex-direction: row;
+        overflow: visible;
+    }
+
+    .horizontalScroll::before{
+        content: '';
+        position: relative;
+        top:0;
+        left: 0;
+        min-width: 50vw;
+        height: 100%;
+    }
+}

@@ -1,0 +1,41 @@
+@import 'colors';
+
+.paragraph{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    text-align-last: left;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+    font-size: 1.3em;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    padding: 25px 0;
+}
+
+.paragraph span{
+    padding-bottom: 25px;
+    font-size: 1.4em;
+    color: $primary-color;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+@media screen and (min-width: 425px) {
+
+    .paragraph{
+        font-size: 1.5em;
+    }
+
+}
+
+@media screen and (min-width: 769px) {
+
+    .paragraph{
+        font-size: 2em;
+    }
+
+}

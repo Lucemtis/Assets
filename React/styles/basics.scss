@@ -1,0 +1,119 @@
+@import 'colors';
+@font-face {
+    font-family: 'Headlinetext';
+    src: url('../medias/fonts/Headlinetext.ttf') format('truetype'); // Remplacez le chemin par le chemin réel de votre fichier de police
+    // Ajoutez des déclarations pour d'autres formats de fichier si nécessaire
+    font-weight: normal; // Définissez le poids de la police
+    font-style: normal; // Définissez le style de la police
+  }
+
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400;500;600;700&family=Montserrat:ital,wght@0,300;0,400;0,600;0,800;1,300;1,400;1,600&family=Moirai+One&display=swap');
+
+
+@mixin radial-gradient-font() {
+  background-image: radial-gradient(ellipse at center bottom, rgba($secondary-color, 0.4), rgba($third-color, 0.05) 25%, transparent 42%);
+  background-size: 430% 120%;
+  background-position: center bottom;
+  background-attachment: fixed;
+  background-clip: text;
+  -webkit-background-clip: text; // Pour la compatibilité avec les navigateurs WebKit (Chrome, Safari)
+  color: transparent;
+  background-repeat: no-repeat;
+}
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+   pointer-events: none;
+}
+
+body, body *{
+  font-size: 1em;
+  padding: 0;
+  margin: 0;
+  color: $white-color;
+  box-sizing: border-box;
+}
+
+body{
+    background-color: $dark-color;
+}
+
+#root{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+::selection {
+    background-color: $primary-color;
+    color: $dark-color;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border: 1px solid $primary-color;
+  border-radius: 15px;
+  box-shadow: inset 0 0 3px $secondary-color;
+}
+
+.full-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+
+
+
+  padding: $PaddingPhone;
+}
+
+@media screen and (max-width: 768px) {
+  body{
+    
+    @include radial-gradient-font();
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .main{
+    
+    padding: $PaddingPc;
+  }
+}

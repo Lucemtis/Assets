@@ -1,0 +1,53 @@
+@import 'colors';
+
+$circle-radius: 90vw;
+$trait-radius: calc($circle-radius - 27vw);
+$trait-width: 1px;
+$trait-gap: 5px;
+$trait-count: 50;
+
+.contentCircle{
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    z-index: -1;
+}
+
+.circle {
+  width: calc($circle-radius * 2);
+  height: calc($circle-radius * 2);
+  position: absolute;
+  top: 124%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+    -webkit-mask-image: radial-gradient(circle, transparent calc($circle-radius / 1.5 ), $primary-color calc($circle-radius / 1.47)) ;
+    mask-image: radial-gradient(circle, transparent 50% , $primary-color 50%);
+
+  .trait { 
+    position: absolute;
+    left: 50%;
+    top: calc($circle-radius - $trait-radius);
+    width: $trait-width;
+    height: $trait-radius;
+    background-color: $primary-color;
+    transform-origin: bottom;
+    border-radius: 5px;
+    box-shadow: 0px 0px 0.6vw 0.05vw $primary-color;
+    }
+
+    animation: rotate 120s infinite linear;
+
+    @keyframes rotate {
+        from {
+        transform: translate(-50%, -50%) rotate(0);
+        }
+        to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+        }
+    }
+}

@@ -1,0 +1,86 @@
+@import 'colors';
+
+.animatedEye{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 100%;
+    max-width: calc(300px - ($PaddingPhone * 2));
+    aspect-ratio: 1/1;
+    background-color: $dark-color;
+    border: 1px solid $primary-color ;
+    box-shadow: 0 0 15px -2px $secondary-color;
+}
+
+.animatedEye::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    background-position: center center;
+    background-size: 150%;
+    background-image: url('../medias/eye1.jpg');
+    z-index: 1;
+}
+
+.animatedEye::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    background-position: center center;
+    background-size: 150%;
+    background-image: url('../medias/eye2.jpg');
+    z-index: 2;
+    opacity: 0;
+    
+    animation: animatedEye 3s linear infinite;
+
+    @keyframes animatedEye {
+        from{
+            opacity: 0;
+        }
+        5%{
+            opacity: 1;
+        }
+        12%{
+            opacity: 0;
+        }
+        to{
+            opacity: 0;
+        }
+    }
+}
+
+.animatedEye span{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.animatedEye span::before,
+.animatedEye span::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -15px;
+    width: 1px;
+    height: 25%;
+    background-color: $primary-color;
+    box-shadow: 0 0 7px 0.5px $secondary-color;
+}
+
+.animatedEye span::after{
+    top: 0;
+    right: -25px;
+    width: 1px;
+    height: 10%;
+}
+

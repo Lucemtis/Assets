@@ -1,0 +1,55 @@
+@import 'colors';
+
+.firstScreenContent{
+    all: unset;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    position: relative;
+    align-items: center;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100svh;
+}
+
+.firstScreenContent::before{
+    font-family: 'El Messiri', sans-serif;
+    font-weight: 900;
+    content: '. . / LOADED / / /';
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: calc($PaddingPhone / 2);
+    padding: calc($PaddingPhone / 2);
+
+    z-index: -50;
+}
+
+.firstScreenContent::after{
+    font-family: 'El Messiri', sans-serif;
+    font-weight: 900;
+    content: '. . / ! PRIVACY CONTENT ! / / / ';
+    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: calc($PaddingPhone / 2);
+    padding: calc($PaddingPhone / 2);
+    border: 1px solid $primary-color;
+    box-shadow: 0 0 10px -3px $primary-color, inset 0 0 10px -3px $primary-color;
+    z-index: -50;
+}

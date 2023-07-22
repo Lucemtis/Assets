@@ -1,0 +1,119 @@
+@import 'colors';
+
+.barCodeFront{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.barCodeFront * {
+    pointer-events: none;
+}
+
+.topCodes, .bottomCodes{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 7vh;
+}
+
+.topCodes::before,
+.topCodes::after,
+.bottomCodes::before,
+.bottomCodes::after,
+.rightCodes span::before,
+.rightCodes span::after,
+.leftCodes span::before,
+.leftCodes span::after
+{
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: inherit;
+    background-color: $primary-color;
+}
+
+.topCodes::before{
+    top: 0;
+    left: 0;
+}
+
+.topCodes::after{
+    top: 0;
+    right: 0;
+}
+
+.bottomCodes, .bottomCodes::before{
+    bottom: 0;
+    left: 0;
+}
+
+.bottomCodes::after{
+    bottom: 0;
+    right: 0;
+}
+
+
+.rightCodes span, .leftCodes span{
+    display: block;
+    position: absolute;
+    width: 100%;
+}
+
+.rightCodes span:nth-last-child(1):before{
+    top: 40vh;
+    left: 0;
+    height: 2vh;
+}
+
+.rightCodes span:nth-last-child(1):after{
+    top: 44vh;
+    left: 0;
+    height: 3vh;
+}
+
+.rightCodes span:nth-last-child(2):before{
+    top: 50vh;
+    left: 0;
+    height: 1vh;
+}
+
+.rightCodes span:nth-last-child(2):after{
+    top: 52vh;
+    left: 0;
+    height: 6vh;
+}
+
+//
+//
+//
+
+.leftCodes span:nth-last-child(1):before{
+    top: 40vh;
+    right: 0;
+    height: 1vh;
+}
+
+.leftCodes span:nth-last-child(1):after{
+    top: 42vh;
+    right: 0;
+    height: 2vh;
+}
+
+.leftCodes span:nth-last-child(2):before{
+    top: 48vh;
+    right: 0;
+    height: 5vh;
+}
+
+.leftCodes span:nth-last-child(2):after{
+    top: 55vh;
+    right: 0;
+    height: 3vh;
+}

@@ -1,0 +1,86 @@
+@import 'colors';
+
+.scrollTextContent{
+    display: flex;
+    justify-content:center;
+    height: 70px;
+    text-transform: uppercase;
+    font-family: 'El Messiri', sans-serif;
+    max-width: 100%;
+}
+
+.scrollText {
+    width: 150px;
+    font-size: 1.6em;
+    text-align: center;
+    display: flex;
+    justify-content:left;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.scrollText:last-child{
+    justify-content:right;
+}
+
+.scrollEffect{
+    display: flex;
+    width: 20px;
+    height: 70px;
+    overflow: visible;
+    position: relative;
+}
+
+.scrollEffect::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 1px;
+    height: 70px;
+    background-color: $primary-color;
+    box-shadow: 0px 0px 10px $secondary-color;
+}
+
+.scrollEffect::after{
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: calc(50% - 10px);
+    width: 1px;
+    height: 20px;
+    background-color: $primary-color;
+    box-shadow: 0px 0px 10px $secondary-color;
+    transform: translateY(-200%);
+    animation: translate 2s infinite ease-in-out;
+
+    @keyframes translate {
+        0% {
+            transform: translateY(-200%);
+        }
+        20% {
+            transform: translateY(0%);
+        }
+
+        80% {
+            transform: translateY(0%);
+        }
+
+        100% {
+            transform: translateY(-200%);
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+    .scrollText {
+        width: 200px;
+        font-size: 2.5em;
+    }
+
+    .scrollTextContent{
+        justify-content:flex-end;
+        align-content: flex-end;
+    }
+}

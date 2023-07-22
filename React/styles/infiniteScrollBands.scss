@@ -1,0 +1,64 @@
+@import 'colors';
+
+.infiniteScrollBands{
+    --frameWidth: 40vw;
+    --frameGap: 1vh;
+
+    width: 200%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transform: rotate(-45deg);
+
+}
+
+.band{
+    display: grid;
+    overflow: hidden;
+}
+
+.childContent{
+    grid-row: 1;
+    width: var(--frameWidth);
+    max-width: var(--frameWidth);
+    aspect-ratio: 3 / 4;
+    box-sizing: border-box;
+    margin: var(--frameGap);
+    border-radius: 15px;
+    overflow: hidden;
+    background-color: rgba($dark-color, 1);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.band:nth-child(even) {
+
+    transform: translateX(calc(var(--frameWidth) * 2 - var(--frameGap)));
+
+}
+
+@media screen and (min-width: 769px) {
+    .infiniteScrollBands{
+        --frameWidth: 23vw;
+        --frameGap: 15px;
+    }
+
+    .band:nth-child(even) {
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, calc(-1 * var(--frameTop) / 2), 0, 0, 1);
+        // transform: translateX(calc(-1px * var(--frameTop)));
+    
+    }
+    
+    .band:nth-child(odd) {
+    
+        transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, calc(1 * var(--frameTop) / 2), 0, 0, 1);
+        // transform: translateX(calc(1px * var(--frameTop)));
+    
+    }
+
+}
